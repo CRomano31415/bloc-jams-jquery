@@ -10,6 +10,16 @@ class Player {
     return this.soundObject.getDuration();
   }
 
+  prettyTime(timeInSeconds,e){
+    e = e || false;
+    let remainder = Math.trunc(timeInSeconds%60);
+    if(e===true){
+        return Math.floor(timeInSeconds/60)+':0'+ remainder;
+      }else{
+        return Math.floor(timeInSeconds/60)+':'+ remainder;
+      }
+  }
+
   getTime() {
     return this.soundObject.getTime();
   }
@@ -31,6 +41,7 @@ class Player {
       this.soundObject.play();
       this.playState = 'playing';
       this.currentlyPlaying.element.removeClass('paused').addClass('playing');
+      this.setPlayerTimes(song.duration);
     } else {
       this.soundObject.pause();
       this.playState = 'paused';
@@ -47,6 +58,12 @@ class Player {
     this.volume = percent;
     this.soundObject.setVolume(percent);
   }
+
+  setPlayerTimes(timeIn){
+    $('#time-control .total-time').text(this.prettyTime(timeIn));
+
+  }
+
 }
 
 const player = new Player();

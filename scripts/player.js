@@ -13,7 +13,7 @@ class Player {
   prettyTime(timeInSeconds,e){
     e = e || false;
     let remainder = Math.trunc(timeInSeconds%60);
-    if(e===true){
+    if( remainder < 10) {
         return Math.floor(timeInSeconds/60)+':0'+ remainder;
       }else{
         return Math.floor(timeInSeconds/60)+':'+ remainder;

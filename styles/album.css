@@ -3,7 +3,8 @@ html {
 }
 
 body {
-  background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
+/*  background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg); */
+  background: linear-gradient(to left, #006677 5%, #000000 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -15,10 +16,12 @@ body {
 nav {
   background: hsla(0, 0%, 0%, 0.2);
   padding: 1rem 2rem;
+  height: 50px;
 }
 
 nav img {
-  height: 50px;
+  height: 60px;
+
 }
 
 main {
